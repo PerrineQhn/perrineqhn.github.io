@@ -32,8 +32,8 @@ Disponible à partir de mai 2025, je recherche un stage de fin d’études pour 
 
 ### Ingénieure TAL - Stagiaire
 
-Laboratoire Modyco (CNRS), Nanterre
-Novembre 2023 - Juillet 2024
+Laboratoire Modyco (CNRS), Nanterre | 
+*Novembre 2023 - Juillet 2024*
 
 - Expansion du Corpus Naija Syncor : Multiplication par deux de la taille du corpus grâce à la collecte et l’intégration de nouvelles données.
 
@@ -47,8 +47,8 @@ Novembre 2023 - Juillet 2024
 
 ### Ingénieure TAL - Stagiaire
 
-Laboratoire Modyco (CNRS), Nanterre
-Juin 2023 - Juillet 2023
+Laboratoire Modyco (CNRS), Nanterre | 
+*Juin 2023 - Juillet 2023*
 
 - Conception d’un Lexique Prosodique : Élaboration d’un lexique prosodique du Naija.
 - Enrichissement des Données : Identification des schémas prosodiques (semi-tons, durées, pentes) pour enrichir les données.
@@ -59,7 +59,7 @@ Juin 2023 - Juillet 2023
 
 ### Extraction de Mots-Clés : TF-IDF vs. LDA
 
-Avril 2024
+*Avril 2024*
 
 - Développement de Modèles : Création de modèles TF-IDF et LDA pour l’extraction de mots-clés.
 - Comparaison des Performances : Évaluation avec des métriques telles que précision, rappel et F-mesure.
@@ -68,7 +68,7 @@ Avril 2024
 
 ### Évaluation d’OpenNMT (Deep Learning)
 
-Avril 2024
+*Avril 2024*
 
 - Analyse de Corpus : Évaluation d’OpenNMT avec des corpus lemmatisés et non lemmatisés.
 - Métriques d’Évaluation : Utilisation des scores BLEU, METEOR, BERT pour l’analyse des résultats.
@@ -77,7 +77,7 @@ Avril 2024
 
 ### Multi-Classification de Texte par Langue
 
-Mai 2024
+*Mai 2024*
 
 - Extraction de Données : Récupération de données textuelles multilingues depuis Wikipédia.
 - Prétraitement : Nettoyage et normalisation des données textuelles.
@@ -86,7 +86,7 @@ Mai 2024
 
 ### De Flaubert à Flaubert
 
-Octobre 2024
+*Octobre 2024*
 
 - Collecte de Données : Téléchargement des œuvres de Flaubert depuis le Projet Gutenberg.
 - Nettoyage et Structuration : Traitement des textes pour une analyse stylistique.
@@ -95,7 +95,7 @@ Octobre 2024
 
 ### La Chasse au Papyrus
 
-Novembre 2024
+*Novembre 2024*
 
 - Web Scraping : Développement de scripts pour collecter des données textuelles en ligne.
 - Analyse de Corpus : Exploration des caractéristiques du corpus via des outils de visualisation.
@@ -103,7 +103,7 @@ Novembre 2024
 
 ### Création d’un OCR Chinois
 
-Octobre 2024
+*Octobre 2024*
 
 - Entraînement de Modèles : Développement d’un modèle CRNN pour la reconnaissance de caractères.
 - Comparaison de Modèles : Évaluation des performances entre Tesseract, EasyOCR et Llava2.
@@ -114,7 +114,7 @@ Octobre 2024
 ### Master TAL Spécialité Ingénierie Multilingue
 
 Inalco, Paris | 
-Septembre 2023 - Décembre 2025
+*Septembre 2023 - Décembre 2025*
 
 - Modules Clés :
 - NLP avec Python
@@ -127,7 +127,7 @@ Septembre 2023 - Décembre 2025
 ### LLCER Chinois Spécialité TAL
 
 Inalco, Paris | 
-Septembre 2020 - Juillet 2023
+*Septembre 2020 - Juillet 2023*
 
 ## **Compétences**
 
