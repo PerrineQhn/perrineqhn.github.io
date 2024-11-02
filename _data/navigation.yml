@@ -16,11 +16,11 @@ main:
   # - title: "Resources"
   #   url: /resources/
 
-  - title: "ML Glossary"
-    url: /machine-learning-glossary/
-    
   - title: "CV"
     url: /cv/
+
+  - title: "ML Glossary"
+    url: /machine-learning-glossary/
     
   #- title: "Guide"
   #  url: /markdown/
