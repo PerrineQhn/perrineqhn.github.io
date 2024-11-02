@@ -1,6 +1,6 @@
 ---
 title: 'General ML concepts'
-date: 2017-11-19
+date: 2024-11-02
 #modified: 
 permalink: /machine-learning-glossary/concepts/
 toc: false
@@ -11,7 +11,7 @@ tags:
   - ML
   - Glossary
 redirect_from: 
-  - /posts/2017/11/glossary-concepts/
+  - /posts/2024/11/glossary-concepts/
 author_profile: false
 sidebar:
   title: "ML Glossary"

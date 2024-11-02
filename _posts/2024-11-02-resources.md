@@ -1,7 +1,7 @@
 ---
 title: 'Resources for learning about ML'
-date: 2017-11-07
-modified: 2021-07-22
+date: 2024-11-02
+# modified: 2021-07-22
 permalink: /resources/
 toc: true
 toc_sticky: true
@@ -13,7 +13,7 @@ tags:
   - ML
   - Resources
 redirect_from: 
-  - /posts/2017/11/resources/
+  - /posts/2024/11/resources/
 ---
 
 
