@@ -28,8 +28,6 @@ main:
 sidebar-glossary:
   - title: "General ML Concepts"
     children:
-      - title: "Concepts"
-        url: /machine-learning-glossary/concepts/
       - title: "Supervisé vs Non Supervisé"
         url: /machine-learning-glossary/concepts/supunsup
       - title: "Classification"
@@ -56,7 +54,8 @@ sidebar-glossary:
   #       url: /machine-learning-glossary/reinforcement/tdl
 
   - title: "Information Theory"
-    url: /machine-learning-glossary/information/
+    - title: "Concepts"
+      url: /machine-learning-glossary/concepts/
 
   - title: "Deep Learning"
     url: /machine-learning-glossary/deep/
