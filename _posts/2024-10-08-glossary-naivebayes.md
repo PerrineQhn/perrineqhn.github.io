@@ -52,7 +52,7 @@ sidebar:
 * :bulb: <span class='intuition'> Intuition </span> :
     * Dans le cas discret : “comptage avancé”. Par exemple : étant donné une phrase x_i à classifier comme spam ou non, compter toutes les fois où chaque mot w^i_j est apparu dans des phrases spam déjà vues et prédire comme spam si le total (pondéré) des “comptes spam” est plus grand que celui des “comptes non spam”.
     * Utiliser une hypothèse d’indépendance conditionnelle (“naïve”) pour obtenir de meilleures estimations des paramètres même avec peu de données.
-* :wrench: <span class='practice'> Practical </span> :
+* :wrench: <span class='practice'> Pratique </span> :
     * Un bon et simple point de référence.
     * Performant lorsque le nombre de caractéristiques est grand, mais que la taille du jeu de données est faible.
     * Complexité d’entraînement : <span class='practiceText' markdown='1'> $O(ND)$ </span> . 
