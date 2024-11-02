@@ -14,7 +14,7 @@ redirect_from:
   - /posts/2024/11/glossary-concepts/
 author_profile: false
 sidebar:
-  title: "ML Glossary"
+  title: "Glossaire ML"
   nav: sidebar-glossary
 ---
 

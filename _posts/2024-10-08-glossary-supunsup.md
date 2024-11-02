@@ -14,7 +14,7 @@ author_profile: false
 redirect_from: 
   - /posts/2014/10/glossary-supunsup
 sidebar:
-  title: "ML Glossary"
+  title: "Glossaire ML"
   nav: sidebar-glossary
 ---
 

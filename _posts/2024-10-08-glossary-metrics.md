@@ -14,7 +14,7 @@ author_profile: false
 redirect_from: 
   - /posts/2024/10/glossary-metrics
 sidebar:
-  title: "ML Glossary"
+  title: "Glossaire ML"
   nav: sidebar-glossary
 
 ---
