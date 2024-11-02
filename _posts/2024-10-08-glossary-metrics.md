@@ -1,5 +1,5 @@
 ---
-title: 'Metriques D'évaluation'
+title: 'Métriques D'évaluation'
 date: 2024-10-08
 #modified: 
 permalink: /machine-learning-glossary/concepts/metrics
