@@ -32,6 +32,8 @@ sidebar-glossary:
         url: /machine-learning-glossary/concepts/supunsup
       - title: "Classification"
         url: /machine-learning-glossary/supervised/classification
+      - title: "Metriques de Performance"
+        url: /machine-learning-glossary/concepts/metrics
 
   - title: "Models"
     children:
