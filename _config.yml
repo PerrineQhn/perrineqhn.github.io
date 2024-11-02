@@ -13,7 +13,7 @@ name                     : &name "Perrine Quennehen"
 description              : &description "Master’s Degree in Natural Language Processing, Multilingual Engineering Track"
 url                      : https://perrineqhn.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "PerrineQhn/perrineqhn.github.io"
+repository               : "https://github.com/PerrineQhn/perrineqhn.github.io"
 teaser                   : "teaser.jpg" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160 # used to compute the reading time of each article
