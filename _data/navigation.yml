@@ -56,8 +56,9 @@ sidebar-glossary:
   #       url: /machine-learning-glossary/reinforcement/tdl
 
   - title: "Information Theory"
-    - title: "Concepts"
-      url: /machine-learning-glossary/concepts/
+    children:
+      - title: "Concepts"
+        url: /machine-learning-glossary/concepts/
 
   - title: "Deep Learning"
     url: /machine-learning-glossary/deep/
