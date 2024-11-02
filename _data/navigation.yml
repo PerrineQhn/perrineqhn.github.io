@@ -32,11 +32,10 @@ sidebar-glossary:
         url: /machine-learning-glossary/concepts/
       - title: "Supervisé vs Non Supervisé"
         url: /machine-learning-glossary/concepts/supunsup
-        children:
-          - title: "Supervisé"
-            url: /machine-learning-glossary/concepts/supervised
-          - title: "Non Supervisé"
-            url: /machine-learning-glossary/concepts/unsupervised
+      - title: "Supervisé"
+        url: /machine-learning-glossary/concepts/supervised
+      - title: "Non Supervisé"
+        url: /machine-learning-glossary/concepts/unsupervised
 
   - title: "Models"
     children:
