@@ -23,7 +23,7 @@ sidebar:
 
 ## Métriques de Classification
 
-### Métriques Uniques
+### Métriques simples
 
 :mag: <span class='note'> Notes secondaires </span> : L'accent est mis sur la classification binaire, mais la plupart des scores peuvent être généralisés au paramètre multi-classes. Souvent, cela est réalisé en considérant uniquement la "classe correcte" et la "classe incorrecte" afin d'en faire une classification binaire, puis vous faites la moyenne (pondérée par la proportion d'observation dans la classe) le score de chaque classe.> 
 
