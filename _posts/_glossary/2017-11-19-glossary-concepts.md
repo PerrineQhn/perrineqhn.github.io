@@ -2,8 +2,8 @@
 title: 'General ML concepts'
 date: 2017-11-19
 #modified: 
-permalink: /machine-learning-glossary/concepts
-toc: true
+permalink: /machine-learning-glossary/concepts/
+toc: false
 excerpt: "ML concepts: general."
 header: 
   teaser: "blog/glossary/glossary.png"
@@ -19,9 +19,6 @@ sidebar:
 ---
 
 {% include base_path %}
-
-
-
 
 
 ## Information Theory
