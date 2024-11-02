@@ -9,17 +9,15 @@ redirect_from:
   - /about.html
 ---
 
-Hello!
+Bonjour !
 
-I'm a PhD student in machine learning at Stanford University co-advised by [Percy Liang](https://cs.stanford.edu/~pliang/) and [Tatsu Hashimoto](https://thashim.github.io/) and funded by a [Knights-Hennessy Scholarship](https://knight-hennessy.stanford.edu/). 
-<!-- I strive to build AI technologies that are simultaneously open/accessible to all and safe/ethical.  -->
+👋 Bienvenue sur mon GitHub ! Je m’appelle Perrine Quennehen, Data Scientist spécialisée en Traitement Automatique du Langage (NLP). Actuellement en Master en ingénierie multilingue, je m’intéresse à la création de solutions innovantes et robustes en NLP, notamment dans le domaine du Machine Learning.
 
-Before starting my PhD, I traveled around trying to reconcile my passion for machine learning research and my entrepreneurial mindset.
-On the research side, I've worked extensively on learning representations of data that provide guarantees (fairness, robustness, etc) on downstream machine learning.
-For example, I've worked on such projects at the [Vector Institute](https://vectorinstitute.ai/) with [Chris Maddison](https://www.cs.toronto.edu/~cmaddis/) and as part of my [Facebook AI Residency](https://research.fb.com/programs/facebook-ai-residency-program/). 
-On the entrepreneurial side, I've applied AI in different startups. For example, developing algorithms at [Grab](https://en.wikipedia.org/wiki/Grab_(company)) to analyze text in under-research languages (Thai, Khmer, Burmese, ...); or predicting room occupancy at [SBS](https://sensiblebuildingscience.com/) to decrease the carbon footprint of large buildings in Vancouver.
+Je travaille principalement en Python et j’explore les différents aspects du NLP, de la collecte de données à l’implémentation de modèles de Machine Learning. Passionnée par l’innovation, je cherche constamment à apprendre et à développer des projets concrets en lien avec le langage et l’IA.
 
-Outside of machine learning I spend my time playing sports with friends (:ski:,:mountain:,:badminton:,:volleyball:,:runner:), traveling, or reading about geopolitics.
+N’hésitez pas à découvrir mes projets et à me contacter pour échanger !
+
+Cela devrait donner une présentation claire et simple de ton parcours et de tes intérêts sans entrer dans les détails de ton CV.
 
 
 <!-- News

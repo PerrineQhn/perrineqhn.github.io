@@ -7,224 +7,160 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
 
-<!-- taken from https://emiliendupont.github.io/resume/  -->
+Perrine Quennehen
 
-Updated June 2021.
+Data Scientist spécialisée en Traitement Automatique du Langage (NLP)
 
-Education 🎓
-======
+📍 Pantin (93), France
+📞 06 65 61 98 38
+📧 perrine.quennehen@gmail.com
+📅 Née le 14 février 1997
+GitHub : PerrineQhn
+LinkedIn : perrine-quennehen (Ajoute ton lien LinkedIn si disponible)
 
-<!-- PhD -->
-<div style="display:flex;">
+À Propos de Moi
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/stanford.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Attirée par les avancées technologiques dans le domaine du Traitement Automatique du Langage, je souhaite mettre à profit mes compétences en Python, Machine Learning et linguistique computationnelle pour contribuer à des projets d’innovation en NLP. Mon esprit d’analyse et ma proactivité me permettent de développer des solutions génératives performantes, tout en assurant la robustesse et l’efficacité des modèles déployés.
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">Stanford University</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">2021 -</span>
-    </p>
-    PhD Computer Science (AI)
-    <div style="color:#7a7a7a">
-      Co-advised by Tatsu Hashimoto and Percy Liang
-    </div>
-  </div>
-</div>
-<hr style="height:1em; margin:0em; visibility:hidden;" />
+Disponible à partir de mai 2025, je recherche un stage de fin d’études pour consolider et appliquer mes compétences.
 
-<!-- MS -->
-<div style="display:flex;">
+Expériences Professionnelles
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/cambridge.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Ingénieure TAL - Stagiaire
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">University of Cambridge</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">2018 - 2019</span>
-    </p>
-    MPhil in Machine Learning
-    <!-- <div style="color:#7a7a7a">
-      Advised by 
-    </div> -->
-  </div>
-</div>
-<hr style="height:1em; margin:0em; visibility:hidden;" />
+Laboratoire Modyco (CNRS), Nanterre
+Novembre 2023 - Juillet 2024
 
+	•	Expansion du Corpus Naija Syncor : Multiplication par deux de la taille du corpus grâce à la collecte et l’intégration de nouvelles données.
+	•	Implémentation d’Outils ASR : Utilisation d’outils de reconnaissance automatique de la parole tels que SPPAS pour extraire et analyser les données intonatives via des scripts Python.
+	•	Automatisation : Mise en place de scripts Python pour automatiser l’alignement audio-transcription, optimisant ainsi le temps d’annotation.
+	•	Mise à Jour des Données Prosodiques : Création d’un outil pour actualiser les données prosodiques dans les fichiers CoNLL-U.
+	•	Modélisation avec Whisper : Utilisation de modèles Whisper fine-tunés pour l’entraînement sur la détection des pauses.
 
-<!-- BSc -->
-<div style="display:flex;">
+Ingénieure TAL - Stagiaire
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/epfl.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Laboratoire Modyco (CNRS), Nanterre
+Juin 2023 - Juillet 2023
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">EPFL</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">2014 - 2017</span>
-    </p>
-    BSc Biomedical Engineering
-    <!-- <div style="color:#7a7a7a">
-      Rank: 1/198 students
-    </div> -->
-  </div>
-</div>
- <hr style="height:2em; margin:0em; visibility:hidden;" />
+	•	Conception d’un Lexique Prosodique : Élaboration d’un lexique prosodique du Naija.
+	•	Enrichissement des Données : Identification des schémas prosodiques (semi-tons, durées, pentes) pour enrichir les données.
+	•	Publication : Présentation du lexique dans un article soumis aux conférences LREC-COLING 2024 et TALN.
+	•	Arbres de Décision : Développement d’arbres de décision pour catégoriser les lemmes en fonction de leurs caractéristiques prosodiques, avec automatisation sous Python et expérimentation avec Scikit-Learn.
 
+Projets Académiques
 
-Work experience 💼
-======
-<!-- Vector -->
-<div style="display:flex;">
+Extraction de Mots-Clés : TF-IDF vs. LDA
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/vector.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Avril 2024
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">Vector Institute</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">Nov 2020 - Aug 2021</span>
-    </p>
-    Research Intern
-    <div style="color:#7a7a7a">
-      Research on representation learning and information theory
-    </div>
-  </div>
-</div>
- <hr style="height:1em; margin:0em; visibility:hidden;" />
+	•	Développement de Modèles : Création de modèles TF-IDF et LDA pour l’extraction de mots-clés.
+	•	Comparaison des Performances : Évaluation avec des métriques telles que précision, rappel et F-mesure.
+	•	Technologies Utilisées : Scikit-learn, Gensim, NLTK, Pandas.
+	•	Compétences Développées : Esprit d’équipe, autonomie, rédaction.
 
-<!-- resident -->
-<div style="display:flex;">
+Évaluation d’OpenNMT (Deep Learning)
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/facebook.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Avril 2024
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">Facebook AI Research</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">Sep 2019 - Sep 2020</span>
-    </p>
-    Facebook AI Resident
-    <div style="color:#7a7a7a">
-      Research on representation learning
-    </div>
-  </div>
-</div>
- <hr style="height:1em; margin:0em; visibility:hidden;" />
+	•	Analyse de Corpus : Évaluation d’OpenNMT avec des corpus lemmatisés et non lemmatisés.
+	•	Métriques d’Évaluation : Utilisation des scores BLEU, METEOR, BERT pour l’analyse des résultats.
+	•	Technologies Utilisées : OpenNMT PyTorch, NLTK, Scikit-learn.
+	•	Compétences Développées : Esprit d’équipe, autonomie, rédaction.
 
-<!-- UVA -->
-<div style="display:flex;">
+Multi-Classification de Texte par Langue
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/uva.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Mai 2024
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">The University of Amsterdam</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">May 2018 - Oct 2018</span>
-    </p>
-    Research Intern
-    <div style="color:#7a7a7a">
-      Research on extrapolation and NLP
-    </div>
-  </div>
-</div>
- <hr style="height:1em; margin:0em; visibility:hidden;" />
+	•	Extraction de Données : Récupération de données textuelles multilingues depuis Wikipédia.
+	•	Prétraitement : Nettoyage et normalisation des données textuelles.
+	•	Analyse Morphosyntaxique : Utilisation de Stanza et SpaCy pour l’analyse.
+	•	Modélisation : Évaluation des performances d’un modèle de classification multilingue.
 
-<!-- Grab -->
-<div style="display:flex;">
+De Flaubert à Flaubert
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/grab.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Octobre 2024
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">Grab</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">Oct 2017 - Apr 2018</span>
-    </p>
-    Data Scientist
-    <div style="color:#7a7a7a">
-      I developed an algorithm that analysed reviews from 40M users in under-researched languages, e.g., Thai, Vietnamese, Burmese
-    </div>
-  </div>
-</div>
- <hr style="height:1em; margin:0em; visibility:hidden;" />
+	•	Collecte de Données : Téléchargement des œuvres de Flaubert depuis le Projet Gutenberg.
+	•	Nettoyage et Structuration : Traitement des textes pour une analyse stylistique.
+	•	Analyse Linguistique : Utilisation de modèles pré-entraînés comme FlauBERT.
+	•	Préparation des Données : Lemmatisation et tokenisation pour des analyses approfondies.
 
-<!-- UBC -->
-<div style="display:flex;">
+La Chasse au Papyrus
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/ubc.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Novembre 2024
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">SBS & University of British Columbia</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">Mar 2017 - Jun 2017</span>
-    </p>
-    Research Assistant
-    <div style="color:#7a7a7a">
-      I developed an algorithm that predicts room occupancy to develop smart heating
-    </div>
-  </div>
-</div>
- <hr style="height:1em; margin:0em; visibility:hidden;" />
+	•	Web Scraping : Développement de scripts pour collecter des données textuelles en ligne.
+	•	Analyse de Corpus : Exploration des caractéristiques du corpus via des outils de visualisation.
+	•	Interface Utilisateur : Création d’une interface avec Streamlit pour la visualisation des résultats.
 
-<!-- EPFL -->
-<div style="display:flex;">
+Création d’un OCR Chinois
 
-  <div style="flex:0.5; padding-right:5%">
-    <img src="{{ site.url }}/images/resume/epfl.png" style="align:left; border: 1px solid #d3d3d3; border-style: outset;">
-  </div>
+Octobre 2024
 
-  <div style="flex:4;">
-    <p style="margin:0px">
-      <b style="font-size: 130%;">EPFL</b>
-      <span style="float:right; font-size:80%; color:#7a7a7a;">Feb 2016 - Sep 2016</span>
-    </p>
-    Research Assistant (part-time)
-    <div style="color:#7a7a7a">
-      I developed an algorithm that analyzes mutations of 183 infants suffering from Sepsis
-    </div>
-  </div>
-</div>
- <hr style="height:2em; margin:0em; visibility:hidden;" />
-  
-Awards 🌟
-======
-<ul>
-  <li>
-    <b>Knight-Hennessy Scholarship </b>
-    <span style="float:right; font-size:80%; color:#7a7a7a;">2021</span> <br>
-    <i>PhD funding</i>
-  </li>
+	•	Entraînement de Modèles : Développement d’un modèle CRNN pour la reconnaissance de caractères.
+	•	Comparaison de Modèles : Évaluation des performances entre Tesseract, EasyOCR et Llava2.
+	•	Technologies Utilisées : Python, PyTorch, Scikit-learn, Pandas, Matplotlib.
 
-  <li>
-    <b>Cambridge' Department of Engineering Scholarship </b>
-    <span style="float:right; font-size:80%; color:#7a7a7a;">2018</span> <br>
-    <i>MPhil funding</i>
-  </li>
-<!-- 
-  <li>
-    <b>Valedictorian </b>
-    <span style="float:right; font-size:80%; color:#7a7a7a;">2018</span> <br>
-    <i>MPhil funding</i>
-  </li> -->
+Formations
 
-  <!-- <li>
-    <b>Silicon Valley Startup Camp</b>
-    <span style="float:right; font-size:80%;color:#7a7a7a;">2018</span> <br>
-    <i>Trip organized for rising Swiss entrepreneurs.</i>
-  </li> -->
+Master TAL Spécialité Ingénierie Multilingue
 
-</ul>
+Inalco, Paris
+Septembre 2023 - Décembre 2025
+
+	•	Modules Clés :
+	•	NLP avec Python
+	•	Machine & Deep Learning (IA)
+	•	Statistiques et Probabilités
+	•	Linguistique
+	•	Développement Web (HTML/CSS/JS)
+	•	Programmation Objet (C++/C#)
+
+LLCER Chinois Spécialité TAL
+
+Inalco, Paris
+Septembre 2020 - Juillet 2023
+
+Compétences
+
+Informatique
+
+	•	Langages de Programmation :
+	•	Python (intermédiaire)
+	•	C++ (débutant)
+	•	C# (débutant)
+	•	SQL (débutant)
+	•	Bash (débutant)
+	•	Technologies Web :
+	•	HTML/CSS (intermédiaire)
+	•	Contrôle de Version :
+	•	Git (intermédiaire)
+	•	Outils NLP :
+	•	NLTK, SpaCy
+	•	PyTorch, TensorFlow
+	•	Pandas, Scikit-Learn
+	•	Outils Divers :
+	•	SPPAS (débutant)
+	•	Praat (débutant)
+
+Soft Skills
+
+	•	Persévérance
+	•	Autonomie
+	•	Rigueur
+	•	Curiosité
+	•	Esprit d’équipe
+
+Langues
+
+	•	Français : Langue maternelle
+	•	Anglais : Niveau C1
+	•	Chinois : Niveau B2
+
+Contacts
+
+	•	📞 Téléphone : 06 65 61 98 38
+	•	📧 Email : perrine.quennehen@gmail.com
+	•	GitHub : PerrineQhn
+	•	LinkedIn : perrine-quennehen (Ajoute ton lien LinkedIn si disponible)
