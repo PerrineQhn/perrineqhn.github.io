@@ -11,7 +11,7 @@ tags:
   - ML
   - Glossary
 redirect_from: 
-  - /posts/2017/11/glossary-trees/
+  - /posts/2024/11/glossary-trees/
 author_profile: false
 sidebar:
   title: "ML Glossary"
