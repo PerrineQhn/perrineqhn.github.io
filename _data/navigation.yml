@@ -18,7 +18,7 @@ main:
   - title: "CV"
     url: /cv/
 
-  - title: "ML Glossary"
+  - title: "Glossaire ML"
     url: /machine-learning-glossary/
     
   # - title: "Guide"
@@ -26,7 +26,7 @@ main:
 
 # Sidebar for ML Glossary
 sidebar-glossary:
-  - title: "General ML Concepts"
+  - title: "Concepts Généraux de ML"
     children:
       - title: "Supervisé vs Non Supervisé"
         url: /machine-learning-glossary/concepts/supunsup
@@ -39,7 +39,7 @@ sidebar-glossary:
     children:
       - title: "Naive Bayes"
         url: /machine-learning-glossary/models/naivebayes
-      - title: "Decision Trees"
+      - title: "Arbre de Décision"
         url: /machine-learning-glossary/models/trees
       # - title: "Variational Autoencoder"
       #   url: /machine-learning-glossary/models/vae
@@ -55,7 +55,7 @@ sidebar-glossary:
   #     - title: "Temporal Difference Learning"
   #       url: /machine-learning-glossary/reinforcement/tdl
 
-  - title: "Information Theory"
+  - title: "Théorie de l'Information"
     children:
       - title: "Concepts"
         url: /machine-learning-glossary/concepts/

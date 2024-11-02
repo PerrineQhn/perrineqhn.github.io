@@ -1,10 +1,10 @@
 ---
-title: 'General ML concepts'
+title: 'Concepts de Machine Learning'
 date: 2024-11-02
 #modified: 
 permalink: /machine-learning-glossary/concepts/
 toc: false
-excerpt: "ML concepts: general."
+excerpt: "Concepts Généraux de Machine Learning"
 header: 
   teaser: "blog/glossary/glossary.png"
 tags:

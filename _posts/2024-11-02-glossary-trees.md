@@ -1,10 +1,10 @@
 ---
-title: 'Decision trees'
+title: 'Arbres de Décision'
 date: 2024-11-02
 modified: 2024-11-02
 permalink: /machine-learning-glossary/models/trees
 toc: false
-excerpt: "ML concepts: decision trees."
+excerpt: "Concepts ML : arbres de décision."
 header: 
   teaser: "blog/glossary/glossary.png"
 tags:
