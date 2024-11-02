@@ -12,7 +12,7 @@ tags:
   - Glossary
 author_profile: false
 redirect_from: 
-  - /posts/2024/10/glossary-metrics
+  - /posts/2024/10/glossary-metrics/
 sidebar:
   title: "Glossaire ML"
   nav: sidebar-glossary
