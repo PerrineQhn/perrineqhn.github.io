@@ -39,8 +39,8 @@ sidebar-glossary:
     children:
       - title: "Naive Bayes"
         url: /machine-learning-glossary/models/naivebayes
-      # - title: "Decision Trees"
-      #   url: /machine-learning-glossary/models/trees
+      - title: "Decision Trees"
+        url: /machine-learning-glossary/models/trees
       # - title: "Variational Autoencoder"
       #   url: /machine-learning-glossary/models/vae
 
