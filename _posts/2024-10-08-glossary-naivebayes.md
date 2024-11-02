@@ -18,9 +18,9 @@ sidebar:
   nav: sidebar-glossary
 ---
 
-{% include base_path %}
+<!-- {% include base_path %} -->
 
-<div>
+<!-- <div>
 <details open>
 <summary>Overview</summary>
 <div class="container-fluid">
@@ -44,7 +44,7 @@ sidebar:
        Cas Discret : <span class="info">Frontière de décision linéaire par morceaux</span>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -81,15 +81,15 @@ Naive Bayes est une famille de modèles génératifs qui prédit $p(y=c \vert\ma
 $$
 \begin{aligned}
 \hat{y} &= arg\max_c p(y=c\vert\mathbf{x}, \pmb\theta) \\
-&= arg\max_c \frac{p(y=c, \pmb\theta)p(\mathbf{x}\vert y=c, \pmb\theta) }{p(x, \pmb\theta)} &  & \text{Bayes Rule} \\
-&= arg\max_c \frac{p(y=c, \pmb\theta)\prod_{j=1}^D p(x_\vert y=c, \pmb\theta) }{p(x, \pmb\theta)} &  & \text{Conditional Independence Assumption} \\
-&= arg\max_c p(y=c, \pmb\theta)\prod_{j=1}^D p(x_j\vert y=c, \pmb\theta)  &  & \text{Constant denominator}
+&= arg\max_c \frac{p(y=c, \pmb\theta)p(\mathbf{x}\vert y=c, \pmb\theta) }{p(x, \pmb\theta)} &  & \text{Règle Bayes} \\
+&= arg\max_c \frac{p(y=c, \pmb\theta)\prod_{j=1}^D p(x_j\vert y=c, \pmb\theta) }{p(x, \pmb\theta)} &  & \text{Hypothèse d'indépendance conditionnelle} \\
+&= arg\max_c p(y=c, \pmb\theta)\prod_{j=1}^D p(x_j\vert y=c, \pmb\theta)  &  & \text{Dénominateur constant}
 \end{aligned}
 $$
 
 Notez que, comme nous sommes dans un cadre de classification, $y$ prend des valeurs discrètes, donc $p(y=c, \pmb\theta)=\pi_c$ est une distribution catégorielle.
 
-Vous vous demandez peut-être pourquoi nous utilisons l'hypothèse de simplification de l'indépendance conditionnelle. Nous pourrions prédire directement en utilisant $\hat{y} = arg\max_c p(y=c, \pmb\theta)p(\mathbf{x} \vert y=c, \pmb\theta)$. <span class='intuitionText'> L’hypothèse conditionnelle nous permet d’obtenir de meilleures estimations des paramètres \theta en utilisant moins de données </span>. En effet,$p(\mathbf{x} \vert y=c, \pmb\theta)$ nécessite beaucoup plus de données puisqu’il s’agit d’une distribution de dimension $D$ (pour chaque étiquette possible c), tandis que  $\prod_{j=1}^D p(x_j \vert y=c, \pmb\theta)$ la factorise en $D$ distributions unidimensionnelles, nécessitant beaucoup moins de données à ajuster en raison de la [malédiction de la dimensionnalité](/machine-learning-glossary/concepts/curse). En plus de nécessiter moins de données, cela permet également de mélanger facilement différentes familles de distributions pour chaque caractéristique.
+Vous vous demandez peut-être pourquoi nous utilisons l'hypothèse de simplification de l'indépendance conditionnelle. Nous pourrions prédire directement en utilisant $\hat{y} = arg\max_c p(y=c, \pmb\theta)p(\mathbf{x} \vert y=c, \pmb\theta)$. <span class='intuitionText'> L’hypothèse conditionnelle nous permet d’obtenir de meilleures estimations des paramètres $\pmb{\theta}$ en utilisant moins de données </span>. En effet,$p(\mathbf{x} \vert y=c, \pmb\theta)$ nécessite beaucoup plus de données puisqu’il s’agit d’une distribution de dimension $D$ (pour chaque étiquette possible c), tandis que  $\prod_{j=1}^D p(x_j \vert y=c, \pmb\theta)$ la factorise en $D$ distributions unidimensionnelles, nécessitant beaucoup moins de données à ajuster en raison de la [malédiction de la dimensionnalité](/machine-learning-glossary/concepts/curse). En plus de nécessiter moins de données, cela permet également de mélanger facilement différentes familles de distributions pour chaque caractéristique.
 
 Nous devons encore répondre à deux questions importantes :
 
