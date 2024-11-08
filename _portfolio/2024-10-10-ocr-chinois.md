@@ -6,10 +6,7 @@ permalink: /portfolio/2024-10-10-ocr-chinois
 categories: [Projet Étudiant, OCR, Deep Learning, Travail en Équipe]
 tags: [Python, PyTorch, Tesseract, EasyOCR, Traitement d'Images, LSTM, CNN]
 description: "Développement d'un OCR pour les caractères chinois, avec une attention particulière aux caractères manuscrits, en utilisant le modèle CRNN et des techniques de prétraitement avancées."
-
 ---
-
-# Création d'un OCR Chinois (octobre 2024)
 
 ### Contexte du Projet
 

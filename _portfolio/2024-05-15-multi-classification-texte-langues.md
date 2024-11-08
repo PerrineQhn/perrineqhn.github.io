@@ -8,8 +8,6 @@ tags: [Python, Selenium, Stanza, SpaCy, XLM-RoBERTa, SMOTE]
 description: "Classification automatique de textes multilingues en fonction de leur langue d'origine, avec extraction de données de Wikipédia, analyse morphosyntaxique et entraînement d'un modèle de classification multilingue."
 ---
 
-# Multi-classification de Texte (Langues) (mai 2024)
-
 ### Contexte du Projet
 
 Ce projet visait à classifier automatiquement des textes multilingues en fonction de leur langue d'origine, en utilisant un corpus extrait de pages Wikipédia pour plusieurs langues. Une analyse approfondie a été menée sur la structure linguistique et les distributions lexicales de chaque langue, suivie d'une évaluation de la performance d'un modèle de classification multilingue.

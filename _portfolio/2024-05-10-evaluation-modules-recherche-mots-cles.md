@@ -7,10 +7,7 @@ permalink: /portfolio/2024-05-10-evaluation-modules-recherche-mots-cles
 categories: [Projet Étudiant, NLP, Recherche de Mots-Clés, Travail en Groupe]
 tags: [Python, Gensim, Scikit-learn, NLTK, Analyse de Corpus, Évaluation de Modèles]
 description: "Évaluation comparative de méthodes de recherche de mots-clés (TF-IDF et LDA) sur des corpus de StackOverflow et Wikipedia, avec analyse des performances et des contextes d'application."
-
 ---
-
-# Évaluation de Modules pour la Recherche de Mots-Clés (mai 2024)
 
 ### Contexte du Projet
 
