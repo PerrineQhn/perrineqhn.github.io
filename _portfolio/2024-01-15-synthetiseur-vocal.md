@@ -3,7 +3,7 @@ title: "Synthétiseur Vocal"
 date: 2024-01-15
 collection: portfolio
 client: "Projet Étudiant"
-permalink: /portfolio/synthetiseur-vocal/
+permalink: /portfolio/2024-01-15-synthetiseur-vocal
 categories: [Projet Étudiant, Traitement du Signal, NLP]
 tags: [Python, Praat, Parselmouth, Synthèse Vocale, Diphones]
 description: "Création d'un synthétiseur vocal à partir d'un ensemble de diphones enregistrés et annotés, pour transformer du texte en voix synthétique."
