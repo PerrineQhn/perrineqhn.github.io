@@ -3,7 +3,7 @@ title: "La Chasse au Papyrus"
 date: 2024-11-10
 collection: portfolio
 client: "Projet Étudiant"
-permalink: /portfolio/2024-11-10-chasse-au-papyrus
+permalink: /portfolio/2024-10-20-chasse-au-papyrus
 categories: [Projet Étudiant, Web Scraping, Analyse de Corpus, Travail en Autonomie]
 tags: [Python, Beautiful Soup, NLTK, Streamlit, Visualisation de Données, Analyse Linguistique]
 description: "Développement d'une application pour la collecte, le prétraitement et l'analyse de papyri égyptiens, incluant la reconnaissance d'entités nommées et la visualisation interactive des résultats."
