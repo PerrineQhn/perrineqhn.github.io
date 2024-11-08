@@ -17,6 +17,8 @@ Bienvenue dans mon portfolio ! Vous trouverez ici un aperçu de mes projets en t
 
 {{ item.excerpt }}
 
+{{ item.description }}
+
 [Lire plus]({{ item.url }})
 
 ---
