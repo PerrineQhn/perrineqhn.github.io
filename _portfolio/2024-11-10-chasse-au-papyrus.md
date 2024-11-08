@@ -8,8 +8,6 @@ tags: [Python, Beautiful Soup, NLTK, Streamlit, Visualisation de Données, Analy
 description: "Développement d'une application pour la collecte, le prétraitement et l'analyse de papyri égyptiens, incluant la reconnaissance d'entités nommées et la visualisation interactive des résultats."
 ---
 
-# La Chasse au Papyrus (novembre 2024)
-
 ### Contexte du Projet
 
 Ce projet avait pour objectif d’automatiser la collecte et l’analyse de données textuelles à partir de sources en ligne. Nous avons développé une application capable de récupérer des données, les traiter et les visualiser pour en extraire des informations significatives sur la distribution lexicale, les entités nommées et les irrégularités linguistiques dans un corpus de papyri.

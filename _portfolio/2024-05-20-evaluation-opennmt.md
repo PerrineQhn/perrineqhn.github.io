@@ -1,10 +1,12 @@
 ---
 title: "Projet d'Évaluation d'OpenNMT"
 date: 2024-05-20
+collection: portfolio
+permalink: /portfolio/2024-05-20-evaluation-opennmt
 categories: [Projet Étudiant, Traduction Automatique, Deep Learning, Travail en Équipe]
+tags: [OpenNMT, RNN, Transformers, PyTorch, BLEU Score, Prétraitement de Données]
+description: "Évaluation comparative des performances de modèles RNNs et Transformers pour la traduction automatique, en utilisant OpenNMT et des corpus multilingues variés."
 ---
-
-# Projet d'Évaluation d'OpenNMT (mai 2024)
 
 ### Contexte du Projet
 
