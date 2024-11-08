@@ -11,10 +11,12 @@ Bienvenue dans mon portfolio ! Vous trouverez ici un aperçu de mes projets en t
 
 {% for item in site.portfolio %}
   ## [{{ item.title }}]({{ item.url }})
+  
   **Date :** {{ item.date | date: "%B %d, %Y" }}
   
   {{ item.excerpt }}
+
   [Lire plus]({{ item.url }})
+
   ---
 {% endfor %}
-
