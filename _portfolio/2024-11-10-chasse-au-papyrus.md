@@ -2,6 +2,7 @@
 title: "La Chasse au Papyrus"
 date: 2024-11-10
 collection: portfolio
+client: "Projet Étudiant"
 permalink: /portfolio/2024-11-10-chasse-au-papyrus
 categories: [Projet Étudiant, Web Scraping, Analyse de Corpus, Travail en Autonomie]
 tags: [Python, Beautiful Soup, NLTK, Streamlit, Visualisation de Données, Analyse Linguistique]
