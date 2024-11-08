@@ -272,7 +272,6 @@ plugins:
   #- jekyll-seo-tag # improve google search 
   - jekyll-scholar # for nice bibliography
   - jemoji # emoji
-  - jekyll-date-localization # for multilingual support
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
