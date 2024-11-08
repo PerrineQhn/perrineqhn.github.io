@@ -1,6 +1,6 @@
 ---
 title: "La Chasse au Papyrus"
-date: 2024-11-10
+date: 2024-10-20
 collection: portfolio
 client: "Projet Étudiant"
 permalink: /portfolio/2024-10-20-chasse-au-papyrus
