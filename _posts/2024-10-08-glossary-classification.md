@@ -2,7 +2,7 @@
 title: 'Classification'
 date: 2024-10-08
 modified:
-permalink: /machine-learning-glossary/supervised/classification
+permalink: /machine-learning-glossary/concepts/classification
 toc: true
 excerpt: "Concepts ML : classification."
 header: 
@@ -12,7 +12,7 @@ tags:
   - Supervised
   - Glossary
 redirect_from: 
-  - /posts/2024/10/glossary-supervised/
+  - /posts/2024/10/glossary-classification/
 author_profile: false
 sidebar:
   title: "Glossaire ML"

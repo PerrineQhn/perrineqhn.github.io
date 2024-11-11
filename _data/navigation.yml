@@ -36,7 +36,7 @@ sidebar-glossary:
       - title: "Supervisé vs Non Supervisé"
         url: /machine-learning-glossary/concepts/supunsup
       - title: "Classification"
-        url: /machine-learning-glossary/supervised/classification
+        url: /machine-learning-glossary/concepts/classification
       - title: "Métriques de Performance"
         url: /machine-learning-glossary/concepts/metrics
 
