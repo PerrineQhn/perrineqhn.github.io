@@ -1,7 +1,7 @@
 ---
 title: 'Classification'
 date: 2024-10-08
-modified: v
+modified:
 permalink: /machine-learning-glossary/supervised/classification
 toc: true
 excerpt: "Concepts ML : classification."
