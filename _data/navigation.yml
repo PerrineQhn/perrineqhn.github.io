@@ -31,6 +31,8 @@ main:
 sidebar-glossary:
   - title: "Concepts Généraux de ML"
     children:
+      - title : "Algorithmes et Métriques standards en Apprentissage Automatique"
+        url: /machine-learning-glossary/concepts/algo-metrics
       - title: "Supervisé vs Non Supervisé"
         url: /machine-learning-glossary/concepts/supunsup
       - title: "Classification"
