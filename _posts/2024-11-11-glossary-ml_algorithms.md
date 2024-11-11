@@ -258,89 +258,231 @@ plt.grid(True)
 
 ## **3. Métriques d'Évaluation**
 
-### Classification
+### Métriques de Classification
 
-#### Exemple : Évaluation d'un Modèle de Diagnostic
+*Les métriques de classification évaluent la qualité des prédictions pour des variables catégorielles.*
+
+:bulb: <span class='intuition'>**Intuition :** Ces métriques sont comme différentes façons d'évaluer un test médical - on veut savoir combien de malades on détecte correctement (vrais positifs) et combien de personnes saines on diagnostique par erreur (faux positifs).</span>
+
+#### Matrice de Confusion
+
+```
+            │ Prédiction Positive │ Prédiction Négative
+────────────┼────────────────────┼────────────────────
+Réel Positif│  Vrais Positifs    │   Faux Négatifs
+            │       (TP)         │       (FN)
+────────────┼────────────────────┼────────────────────
+Réel Négatif│  Faux Positifs    │   Vrais Négatifs
+            │       (FP)         │       (TN)
+```
+
+#### Métriques de Base
+
+##### Accuracy (Précision Globale)
+
+- **Formule** : $Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$
+- **Interprétation** : Proportion de prédictions correctes
+- **Caractéristiques** :
+  - Simple à comprendre
+  - Entre 0 et 1 (meilleur = 1)
+  - Trompeuse si classes déséquilibrées
+- **Exemple** : Accuracy = 0.95 signifie 95% de prédictions correctes
+
+##### Précision
+
+- **Formule** : $Precision = \frac{TP}{TP + FP}$
+- **Interprétation** : Proportion de vrais positifs parmi les prédictions positives
+- **Caractéristiques** :
+  - Mesure la qualité des prédictions positives
+  - Importante quand les faux positifs sont coûteux
+- **Exemple** : En diagnostic médical, proportion de vrais malades parmi les patients diagnostiqués positifs
+
+##### Recall (Sensibilité, Rappel)
+
+- **Formule** : $Recall = \frac{TP}{TP + FN}$
+- **Interprétation** : Proportion de positifs correctement identifiés
+- **Caractéristiques** :
+  - Mesure la capacité à trouver tous les positifs
+  - Importante quand manquer un positif est grave
+- **Exemple** : En diagnostic, proportion de malades correctement détectés
+
+##### F1-Score
+
+- **Formule** : $F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall}$
+- **Interprétation** : Moyenne harmonique de la précision et du recall
+- **Caractéristiques** :
+  - Combine précision et recall
+  - Entre 0 et 1 (meilleur = 1)
+  - Bon compromis pour classes déséquilibrées
+
+#### Métriques Avancées
+
+##### ROC (Receiver Operating Characteristic)
+
+- **Définition** : Courbe TPR vs FPR pour différents seuils
+  - TPR (True Positive Rate) = Recall
+  - FPR (False Positive Rate) = $\frac{FP}{FP + TN}$
+- **AUC-ROC** : Aire sous la courbe ROC
+  - Entre 0.5 (aléatoire) et 1 (parfait)
+  - Indépendant du seuil choisi
+  - Mesure le pouvoir discriminant
+
+##### Precision-Recall Curve
+
+- **Définition** : Courbe Precision vs Recall
+- **Utilisation** : 
+  - Préférable à ROC pour classes très déséquilibrées
+  - Montre le compromis précision/recall
+
+#### Cas Particuliers
+
+##### Classification Multi-classes
+
+- **Macro-moyenne** : Moyenne simple sur toutes les classes
+- **Micro-moyenne** : Pondération par fréquence des classes
+- **Weighted-moyenne** : Pondération personnalisée par classe
+
+##### Classification Multi-labels
+
+- **Hamming Loss** : Proportion d'labels mal classés
+- **Subset Accuracy** : Exactitude sur l'ensemble des labels
+
+#### Exemple Pratique
+
 ```python
 from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import roc_curve, auc, precision_recall_curve
 
-# Résultats du modèle
-y_true = [1, 0, 1, 1, 0, 0, 1]  # 1: Malade, 0: Sain
-y_pred = [1, 0, 0, 1, 0, 1, 1]
+# Données exemple
+y_true = [1, 0, 1, 1, 0, 1, 0, 0]
+y_pred = [1, 0, 1, 0, 0, 1, 1, 0]
+y_prob = [0.9, 0.1, 0.8, 0.3, 0.2, 0.9, 0.7, 0.1]
 
 # Matrice de confusion
 cm = confusion_matrix(y_true, y_pred)
 print("Matrice de confusion :")
 print(cm)
 
-# Métriques détaillées
+# Rapport détaillé
 print("\nRapport de classification :")
 print(classification_report(y_true, y_pred))
 
-# Calculs manuels
-TP = cm[1,1]  # Vrais Positifs
-TN = cm[0,0]  # Vrais Négatifs
-FP = cm[0,1]  # Faux Positifs
-FN = cm[1,0]  # Faux Négatifs
+# Courbe ROC
+fpr, tpr, _ = roc_curve(y_true, y_prob)
+roc_auc = auc(fpr, tpr)
+print(f"\nAUC-ROC : {roc_auc:.3f}")
 
-precision = TP / (TP + FP)
-recall = TP / (TP + FN)
-f1 = 2 * (precision * recall) / (precision + recall)
-
-print(f"\nPrécision : {precision:.2f}")
-print(f"Recall : {recall:.2f}")
-print(f"F1-Score : {f1:.2f}")
+# Courbe Precision-Recall
+precision, recall, _ = precision_recall_curve(y_true, y_prob)
 ```
-- **Accuracy** : Proportion de prédictions correctes
-- **Précision** : $$\frac{TP}{TP+FP}$$
-- **Recall** : $$\frac{TP}{TP+FN}$$
-- **F1-Score** : $$2 \times \frac{Précision \times Recall}{Précision + Recall}$$
+
+#### Choix des Métriques selon le Contexte
+
+1. **Classes équilibrées**
+   - Accuracy : bonne mesure générale
+   - F1-score : pour plus de détails
+
+2. **Classes déséquilibrées**
+   - Precision/Recall : selon le coût des erreurs
+   - AUC-PR : meilleure vue d'ensemble
+
+3. **Coût des erreurs asymétrique**
+   - Precision : si FP coûteux
+   - Recall : si FN coûteux
+   - Ajustement du seuil de décision
+
+4. **Applications spécifiques**
+   - **Médical** : Priorité recall (ne pas manquer de malades)
+   - **Spam** : Priorité precision (ne pas bloquer de bons emails)
+   - **Fraude** : Compromis selon coûts business
 
 ### Régression
 
-#### Exemple : Évaluation d'un Modèle de Prévision
-```python
-from sklearn.metrics import mean_squared_error, r2_score
-import numpy as np
+### Métriques de Régression
 
-# Données
-y_true = [10, 15, 12, 18, 20, 16, 13, 21]
-y_pred = [11, 15.5, 11.5, 17, 19, 16.5, 14, 20]
+*Les métriques de régression évaluent la qualité des prédictions pour des variables continues.*
+
+:bulb: <span class='intuition'>**Intuition :** Ces métriques sont comme différentes façons de mesurer la distance entre vos prédictions et la réalité.</span>
+
+#### Mean Squared Error (MSE)
+
+- **Formule** : $MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$
+- **Interprétation** : Moyenne des erreurs au carré
+- **Caractéristiques** :
+  - Pénalise fortement les grandes erreurs
+  - Toujours positive
+  - Unité au carré (ex: euros²)
+- **Utilisation** : 
+  - Utile pour l'optimisation
+  - Sensible aux outliers
+
+#### Root Mean Squared Error (RMSE)
+
+- **Formule** : $RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2} = \sqrt{MSE}$
+- **Interprétation** : Écart-type des erreurs de prédiction
+- **Caractéristiques** :
+  - Même unité que la variable cible
+  - Plus interprétable que MSE
+- **Exemple** : RMSE = 5€ signifie que l'erreur "typique" est de 5€
+
+#### Mean Absolute Error (MAE)
+
+- **Formule** : $MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$
+- **Interprétation** : Moyenne des valeurs absolues des erreurs
+- **Caractéristiques** :
+  - Plus robuste aux outliers que MSE/RMSE
+  - Même unité que la variable cible
+  - Erreur médiane si distribution exponentielle
+- **Comparaison MAE vs RMSE** :
+  - MAE < RMSE : présence d'erreurs importantes
+  - MAE ≈ RMSE : erreurs uniformément distribuées
+
+#### Coefficient de Détermination (R²)
+
+- **Formule** : $R^2 = 1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$
+- **Interprétation** : Proportion de variance expliquée par le modèle
+- **Caractéristiques** :
+  - Varie entre -∞ et 1
+  - R² = 1 : prédiction parfaite
+  - R² = 0 : équivalent à prédire la moyenne
+  - R² < 0 : pire que prédire la moyenne
+- **Limites** :
+  - Peut augmenter artificiellement avec le nombre de variables
+  - Ne garantit pas la qualité des prédictions
+
+#### Comparaison des Métriques
+
+- **MSE/RMSE** : 
+  - Avantage : Bonne mesure pour l'optimisation
+  - Inconvénient : Sensible aux outliers
+- **MAE** :
+  - Avantage : Plus robuste aux outliers
+  - Inconvénient : Gradient non continu en zéro
+- **R²** :
+  - Avantage : Facile à interpréter (pourcentage)
+  - Inconvénient : Peut être trompeur dans certains cas
+
+#### Exemple Pratique
+
+```python
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+# Vraies valeurs et prédictions
+y_true = [100, 150, 120, 180, 200]
+y_pred = [110, 155, 115, 170, 190]
 
 # Calcul des métriques
 mse = mean_squared_error(y_true, y_pred)
-rmse = np.sqrt(mse)
+rmse = mean_squared_error(y_true, y_pred, squared=False)
+mae = mean_absolute_error(y_true, y_pred)
 r2 = r2_score(y_true, y_pred)
 
-print(f"MSE : {mse:.2f}")
-print(f"RMSE : {rmse:.2f}")
-print(f"R² : {r2:.2f}")
-
-# Analyse des résidus
-residus = np.array(y_true) - np.array(y_pred)
-print(f"\nRésidus moyens : {np.mean(residus):.2f}")
-print(f"Écart-type résidus : {np.std(residus):.2f}")
-
-# Visualisation
-plt.figure(figsize=(10, 4))
-plt.subplot(1, 2, 1)
-plt.scatter(y_true, y_pred)
-plt.plot([min(y_true), max(y_true)], 
-         [min(y_true), max(y_true)], 'r--')
-plt.xlabel('Valeurs Réelles')
-plt.ylabel('Prédictions')
-
-plt.subplot(1, 2, 2)
-plt.hist(residus, bins=10)
-plt.xlabel('Résidus')
-plt.ylabel('Fréquence')
-plt.title('Distribution des Résidus')
+print(f"MSE: {mse:.2f}")
+print(f"RMSE: {rmse:.2f}")
+print(f"MAE: {mae:.2f}")
+print(f"R²: {r2:.3f}")
 ```
 
-- **MSE** : $\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$
-- **RMSE** : $$\sqrt{MSE}$$
-- **MAE** : $$\frac{1}{n}\sum_{i=1}^{n}\|y_i - \hat{y}_i\|$$
-- **R²** : $$1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$$
 
 ## **4. Bonnes Pratiques**
 
