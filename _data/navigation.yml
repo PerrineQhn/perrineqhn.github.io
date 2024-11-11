@@ -38,7 +38,7 @@ sidebar-glossary:
       - title: "Classification"
         url: /machine-learning-glossary/concepts/classification
       - title: "Métriques de Performance"
-        url: /machine-learning-glossary/concepts/metrics
+        url: /machine-learning-glossary/concepts/metrics/
 
   - title: "Models"
     children:
