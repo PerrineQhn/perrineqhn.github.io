@@ -23,7 +23,7 @@ sidebar:
 
 ### Métriques simples
 
-:mag: <span class='note'> Notes secondaires </span> : L'accent est mis sur la classification binaire, mais la plupart des scores peuvent être généralisés au paramètre multi-classes. Souvent, cela est réalisé en considérant uniquement la "classe correcte" et la "classe incorrecte" afin d'en faire une classification binaire, puis vous faites la moyenne (pondérée par la proportion d'observation dans la classe) le score de chaque classe.> 
+:mag: <span class='note'> Notes secondaires </span> : L'accent est mis sur la classification binaire, mais la plupart des scores peuvent être généralisés au paramètre multi-classes. Souvent, cela est réalisé en considérant uniquement la "classe correcte" et la "classe incorrecte" afin d'en faire une classification binaire, puis vous faites la moyenne (pondérée par la proportion d'observation dans la classe) le score de chaque classe.
 
 * **TP** / **TN** / **FN** / **FP:** Mieux compris à travers un $$2*2$$ [confusion matrix](#visual-metrics).
 
@@ -54,7 +54,7 @@ sidebar:
 
 - **F1-Score** : Moyenne harmonique (utile pour la moyenne des taux) du rappel et de la précision.
 
-  - $F1 = 2 \frac{Précision * Rappel}{Précision + Rappel}
+  - $F1 = 2 \frac{Précision * Rappel}{Précision + Rappel}$
     - Si le rappel est $\beta$ fois plus important que la précision, utilisez : $F_{\beta} = (1 + \beta^2)  \frac{Précision* Rappel}{\beta^2  Précision + Rappel}$
 
   - 💡 Intuition : À quel point pouvons-nous faire confiance à nos algorithmes pour la classe positive ?
