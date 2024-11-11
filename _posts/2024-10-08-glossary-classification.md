@@ -479,7 +479,7 @@ Lorsqu’on utilise un *prior* uniforme $\alpha_\theta=1$,cette équation est ap
 ## Regression
 **Arbres de décision**
 
-Les arbres de décision sont plus souvent utilisés pour les problèmes de classification. J’en parle donc en détail [ici](#decision-trees-1).
+Les arbres de décision sont plus souvent utilisés pour les problèmes de classification.
 
 Les deux différences avec les arbres de décision pour la classification sont :
 
@@ -495,4 +495,4 @@ Jetons un coup d’œil à un graphique simple pour mieux comprendre l’algorit
 ![Building Decision Trees Regression](/images/blog/glossary-old/decision-tree-reg.gif){:width='477px' :height='327px'}
 </div>
 
-:x:En plus des inconvénients vus dans les [arbres de décision pour la classification](#decision-trees-1), les arbres de décision pour la régression souffrent du fait qu’ils prédisent une fonction non lisse . 
+:x:En plus des inconvénients vus dans les arbres de décision pour la classification, les arbres de décision pour la régression souffrent du fait qu’ils prédisent une fonction non lisse . 
