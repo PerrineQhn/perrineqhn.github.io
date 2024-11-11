@@ -3,7 +3,7 @@ title: 'Métriques D'évaluation'
 date: 2024-10-08
 #modified: 
 permalink: /machine-learning-glossary/concepts/metrics/
-toc: false
+toc: true
 excerpt: "Concepts ML : mesures d'évaluation."
 header: 
   teaser: "blog/glossary/glossary.png"
