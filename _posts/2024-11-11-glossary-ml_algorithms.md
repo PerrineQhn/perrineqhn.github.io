@@ -11,7 +11,7 @@ tags:
   - Glossary
 author_profile: false
 redirect_from: 
-  - /posts/2024/11/glossary-ml_algorithms
+  - /posts/2024/11/glossary-ml_algorithms/
 sidebar:
   title: "Glossaire ML"
   nav: sidebar-glossary
