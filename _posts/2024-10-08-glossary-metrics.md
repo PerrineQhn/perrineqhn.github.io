@@ -68,7 +68,7 @@ sidebar:
 
   - Aussi appelée perte **d’entropie croisée** ou **perte logistique**.
 
-  - $$LogLoss = - \frac{1}{N} \sum_{n=1}^N \sum_{c=1}^C y_{nc} \ln(\hat{y}_{nc})$$
+  - $ LogLoss = - \frac{1}{N} \sum_{n=1}^N \sum_{c=1}^C y_{nc} \ln(\hat{y}_{nc})$
 
   - Utilisez le logarithme naturel pour la cohérence.
 
