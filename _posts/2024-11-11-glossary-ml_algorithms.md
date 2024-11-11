@@ -1,10 +1,9 @@
 ---
-title: 'Algorithmes et Métriques Standards d'Apprentissage Automatique'
+title: 'Algorithmes Standards en Machine Learning'
 date: 2024-11-11
-#modified: 
 permalink: /machine-learning-glossary/concepts/ml_algorithms
 toc: false
-excerpt: "Concepts en apprentissage automatique : algorithmes et métriques standards."
+excerpt: "Concepts en apprentissage automatique : algorithmes standards de machine learning."
 header: 
   teaser: "blog/glossary/glossary.png"
 tags:
@@ -17,341 +16,268 @@ sidebar:
   title: "Glossaire ML"
   nav: sidebar-glossary
 ---
+
 {% include base_path %}
+
+## **Introduction**
+
+Les algorithmes de machine learning se divisent en plusieurs grandes familles selon leur approche d'apprentissage. Chaque algorithme possède ses forces et faiblesses, et son choix dépend de la nature du problème à résoudre.
+
+:bulb: <span class='intuition'>**Intuition :** Chaque algorithme peut être vu comme un outil différent dans une boîte à outils - un marteau est parfait pour planter un clou, mais inefficace pour visser une vis.</span>
 
 ## **1. Algorithmes Supervisés**
 
-### 1.1 Régression Linéaire
+### Régression Linéaire
 
-#### Exemple Concret : Prédiction du Prix Immobilier
+*La régression linéaire modélise la relation linéaire entre des variables d'entrée et une variable de sortie continue.*
+
+#### Exemple : Prédiction de Prix Immobilier
 ```python
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-# Données
+# Données immobilières
 data = {
-    'surface_m2': [45, 60, 75, 90, 120, 150],
-    'nb_chambres': [1, 2, 2, 3, 3, 4],
-    'distance_centre': [2.5, 3.0, 4.5, 1.0, 5.0, 3.5],
-    'prix': [200000, 280000, 310000, 420000, 450000, 590000]
+    'surface_m2': [45, 60, 75, 90],
+    'distance_centre': [2.5, 3.0, 4.5, 1.0],
+    'prix': [200000, 280000, 310000, 420000]
 }
 df = pd.DataFrame(data)
 
 # Préparation
-X = df[['surface_m2', 'nb_chambres', 'distance_centre']]
+X = df[['surface_m2', 'distance_centre']]
 y = df['prix']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-
-# Modèle
 model = LinearRegression()
-model.fit(X_train, y_train)
+model.fit(X, y)
 
-# Interprétation
-coefficients = pd.DataFrame({
-    'Feature': X.columns,
-    'Coefficient': model.coef_
-})
-print("Coefficients :")
-print(coefficients)
-print(f"R² Score : {model.score(X_test, y_test):.3f}")
-
-# Prédiction pour un nouvel appartement
-nouveau = pd.DataFrame([[80, 2, 3.0]], columns=X.columns)
-prix_predit = model.predict(nouveau)[0]
-print(f"Prix prédit : {prix_predit:.2f}€")
+# Prédiction
+nouveau_bien = [[70, 2.0]]
+prix_predit = model.predict(nouveau_bien)
+print(f"Prix prédit : {prix_predit[0]:,.0f}€")
 ```
 
-#### Interprétation :
-- Un coefficient de 2000 pour surface_m2 signifie que chaque m² supplémentaire augmente le prix de 2000€
-- R² de 0.85 indique que 85% de la variance des prix est expliquée par le modèle
-- **Description** : 
-  - Modélise $$y = wx + b$$ où w est le vecteur de poids et b le biais
-  - Minimise la somme des carrés des résidus (MSE)
-- **Formule du coût** : $$J(w,b) = \frac{1}{2n}\sum_{i=1}^{n}(y_i - (wx_i + b))^2$$
-- **Applications détaillées** :
-  - Prédiction des prix immobiliers basée sur la surface, l'emplacement, etc.
-  - Estimation des ventes en fonction des dépenses marketing
-  - Prévision de la consommation énergétique
-- **Variantes** :
-  - Ridge (L2) : ajoute $$\alpha\sum w^2$$ au coût
-  - Lasso (L1) : ajoute $$\alpha\sum |w|$$ au coût
-  - Elastic Net : combine L1 et L2
-- **Implémentation (exemple Python)** :
-```python
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-model = LinearRegression()
-model.fit(X_train, y_train)
-predictions = model.predict(X_test)
-```
+:bulb: <span class='intuition'>**Intuition :** Imaginez une ligne qui tente de passer au plus près de tous les points d'un nuage de points.</span>
 
-### 1.2 Régression Logistique
+#### Formulation Mathématique
+- Modèle : $$y = wx + b$$ 
+- Fonction de coût : $$J(w,b) = \frac{1}{2n}\sum_{i=1}^{n}(y_i - (wx_i + b))^2$$
 
-#### Exemple Concret : Prédiction de Fraude Bancaire
+#### Applications Clés
+- Prédiction de prix immobiliers
+- Estimation de ventes
+- Prévision de consommation
+
+#### Variantes
+- Ridge (L2)
+- Lasso (L1)
+- Elastic Net
+
+### Régression Logistique
+
+*La régression logistique est un algorithme de classification qui estime la probabilité d'appartenance à une classe.*
+
+#### Exemple : Détection de Spam
 ```python
-import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report
 
-# Données
+# Données d'emails
 data = {
-    'montant': [100, 2500, 30, 15000, 450, 3000],
-    'heure': [14, 23, 15, 2, 11, 22],
-    'pays_habituel': [1, 1, 1, 0, 1, 0],
-    'fraude': [0, 0, 0, 1, 0, 1]
+    'longueur_texte': [100, 2500, 30, 1500],
+    'nb_liens': [1, 35, 2, 25],
+    'est_spam': [0, 1, 0, 1]
 }
 df = pd.DataFrame(data)
 
-# Préparation
-X = df[['montant', 'heure', 'pays_habituel']]
-y = df['fraude']
-
-# Normalisation importante pour la régression logistique
+# Normalisation des features
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X = scaler.fit_transform(df[['longueur_texte', 'nb_liens']])
+y = df['est_spam']
 
 # Modèle
-model = LogisticRegression(random_state=42)
-model.fit(X_scaled, y)
+model = LogisticRegression()
+model.fit(X, y)
 
-# Évaluation
-y_pred = model.predict(X_scaled)
-print(classification_report(y, y_pred))
-
-# Probabilités pour une nouvelle transaction
-nouvelle_transaction = pd.DataFrame([[500, 13, 1]], columns=X.columns)
-nouvelle_transaction_scaled = scaler.transform(nouvelle_transaction)
-proba_fraude = model.predict_proba(nouvelle_transaction_scaled)[0][1]
-print(f"Probabilité de fraude : {proba_fraude:.2%}")
-
-# Seuil de décision personnalisé
-seuil = 0.75
-prediction = "Frauduleuse" if proba_fraude > seuil else "Légitime"
-print(f"Classification avec seuil {seuil}: {prediction}")
+# Analyse nouvel email
+nouvel_email = scaler.transform([[800, 12]])
+proba_spam = model.predict_proba(nouvel_email)[0][1]
+print(f"Probabilité de spam : {proba_spam:.2%}")
 ```
 
-#### Points Clés :
-- Normalisation cruciale pour la performance
-- Ajustement possible du seuil selon le coût des faux positifs/négatifs
-- Interprétation des coefficients pour l'importance des features
-- **Description** :
-  - Utilise la fonction sigmoïde : $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
-  - Probabilité de classe : $$P(y=1|x) = \sigma(wx + b)$$
-- **Fonction de coût** : 
-  $$J(w,b) = -\frac{1}{n}\sum_{i=1}^{n}[y_i\log(h(x_i)) + (1-y_i)\log(1-h(x_i))]$$
-- **Hyperparamètres clés** :
-  - C : inverse de la régularisation (plus C est grand, moins de régularisation)
-  - max_iter : nombre maximum d'itérations
-  - solver : {'lbfgs', 'newton-cg', 'liblinear', 'sag', 'saga'}
-- **Applications détaillées** :
-  - Prédiction de la probabilité de défaut de paiement
-  - Classification d'emails (spam/non-spam)
-  - Diagnostic médical (malade/sain)
-- **Extension multi-classe** :
-  - One-vs-Rest : un classifieur par classe
-  - Softmax : généralisation multi-classe directe
+:bulb: <span class='intuition'>**Intuition :** C'est comme tracer une frontière qui sépare au mieux deux groupes de points.</span>
 
-### 1.3 Arbres de Décision
-- **Description détaillée** :
-  - Structure hiérarchique de nœuds de décision
-  - Chaque nœud divise les données selon un critère
-- **Critères de division** :
-  - Gini : $$1 - \sum_{i=1}^{c} (p_i)^2$$
-  - Entropie : $$-\sum_{i=1}^{c} p_i \log_2(p_i)$$
-  - MSE (régression) : $$\frac{1}{n}\sum_{i=1}^{n}(y_i - \bar{y})^2$$
-- **Hyperparamètres importants** :
-  - max_depth : profondeur maximale
-  - min_samples_split : nombre minimum d'échantillons pour diviser
-  - min_samples_leaf : nombre minimum d'échantillons par feuille
-  - max_features : nombre maximum de features à considérer
-- **Techniques d'élagage** :
-  - Pré-élagage : limites sur la croissance
-  - Post-élagage : réduction après construction
-- **Exemple d'implémentation** :
+#### Formulation Mathématique
+- Fonction sigmoïde : $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
+- Probabilité : $$P(y=1|x) = \sigma(wx + b)$$
+
+#### Applications Clés
+- Détection de fraude
+- Diagnostic médical
+- Classification de spam
+
+### Random Forest
+
+*Ensemble d'arbres de décision combinant leurs prédictions.*
+
+#### Exemple : Prédiction de Diabète
 ```python
-from sklearn.tree import DecisionTreeClassifier
-model = DecisionTreeClassifier(
+from sklearn.ensemble import RandomForestClassifier
+
+# Données patients
+data = {
+    'glucose': [85, 168, 122, 145],
+    'imc': [22.1, 30.5, 24.3, 29.8],
+    'age': [31, 45, 35, 50],
+    'diabetique': [0, 1, 0, 1]
+}
+df = pd.DataFrame(data)
+
+# Modèle avec paramètres optimisés
+rf = RandomForestClassifier(
+    n_estimators=100,
     max_depth=5,
-    min_samples_split=5,
-    min_samples_leaf=2
+    min_samples_split=5
 )
+X = df[['glucose', 'imc', 'age']]
+rf.fit(X, df['diabetique'])
+
+# Importance des features
+importances = pd.DataFrame({
+    'feature': X.columns,
+    'importance': rf.feature_importances_
+})
+print("Importance des variables :")
+print(importances.sort_values('importance', ascending=False))
 ```
 
-### 1.4 Random Forest
-- **Principe détaillé** :
-  - Bagging (Bootstrap Aggregating)
-  - Feature sampling à chaque split
-  - Vote majoritaire ou moyenne des prédictions
-- **Paramètres clés** :
-  - n_estimators : nombre d'arbres
-  - max_features : $$\sqrt{n}$$ pour classification, $$n/3$$ pour régression
-  - bootstrap : True pour bagging
-- **Importance des variables** :
-  - Basée sur la diminution moyenne de l'impureté
-  - Permutation importance
-- **Out-of-Bag Score** :
-  - Validation naturelle sur échantillons non utilisés
-  - ≈ 37% des données pour chaque arbre
+:bulb: <span class='intuition'>**Intuition :** C'est comme demander l'avis à un groupe d'experts et prendre la décision majoritaire.</span>
 
-### 1.5 Support Vector Machines (SVM)
-- **Formulation mathématique** :
-  - Problème primal : $$\min_{w,b} \frac{1}{2}||w||^2 + C\sum_{i=1}^{n}\xi_i$$
-  - Contraintes : $$y_i(w^Tx_i + b) \geq 1 - \xi_i$$
-- **Kernels courants** :
-  - Linéaire : $$K(x,y) = x^Ty$$
-  - RBF : $$K(x,y) = \exp(-\gamma||x-y||^2)$$
-  - Polynomial : $$K(x,y) = (x^Ty + c)^d$$
-- **Hyperparamètres critiques** :
-  - C : compromis régularisation/erreur
-  - gamma : influence d'un point d'entraînement
-  - kernel : type de transformation
+#### Principes Clés
+1. Bagging (échantillonnage avec remise)
+2. Feature sampling
+3. Vote majoritaire/moyenne
 
 ## **2. Algorithmes Non Supervisés**
 
-### 2.1 K-Means
-- **Algorithme détaillé** :
-  1. Initialisation aléatoire des centroïdes
-  2. Attribution des points au centroïde le plus proche
-  3. Mise à jour des centroïdes
-  4. Répétition jusqu'à convergence
-- **Méthodes d'initialisation** :
-  - K-means++ : initialisation intelligente
-  - Random : points aléatoires
-- **Critères d'arrêt** :
-  - Nombre max d'itérations
-  - Changement minimal des centroïdes
-  - Convergence de l'inertie
-- **Choix optimal de K** :
-  - Méthode du coude
-  - Silhouette score
-  - Gap statistic
+### K-Means
 
-### 2.2 DBSCAN
-- **Paramètres cruciaux** :
-  - eps (ε) : rayon du voisinage
-  - min_samples : points minimum pour former un cluster
-- **Types de points** :
-  - Core : ont suffisamment de voisins
-  - Border : proche d'un core point
-  - Noise : ni core ni border
-- **Avantages détaillés** :
-  - Trouve des clusters de forme arbitraire
-  - Résistant au bruit
-  - Ne nécessite pas de K
-- **Complexité** : $$O(n \log n)$$ avec indexation spatiale
+*Algorithme de clustering qui regroupe les données en K clusters.*
 
-### 2.3 PCA
-- **Mathématiques sous-jacentes** :
-  1. Centrage des données
-  2. Calcul de la matrice de covariance
-  3. Décomposition en valeurs propres
-  4. Projection sur les premiers vecteurs propres
-- **Choix du nombre de composantes** :
-  - Variance expliquée cumulée
-  - Scree plot
-  - Kaiser criterion (valeurs propres > 1)
-- **Extensions** :
-  - Kernel PCA
-  - Incremental PCA
-  - Sparse PCA
-
-## 3. **Apprentissage Profond**
-
-### 3.1 Réseaux de Neurones Feed-Forward
-- **Architecture détaillée** :
-  - Couches d'entrée : dimension des features
-  - Couches cachées : nombre variable
-  - Couche de sortie : dimension de la prédiction
-- **Fonctions d'activation** :
-  - ReLU : $$f(x) = \max(0,x)$$
-  - Sigmoid : $$f(x) = \frac{1}{1+e^{-x}}$$
-  - Tanh : $$f(x) = \frac{e^x-e^{-x}}{e^x+e^{-x}}$$
-- **Techniques d'optimisation** :
-  - SGD avec momentum
-  - Adam
-  - RMSprop
-- **Régularisation** :
-  - Dropout
-  - Batch Normalization
-  - L1/L2
-
-### 3.2 CNN
-- **Couches principales** :
-  - Convolution : filtres de détection
-  - Pooling : réduction dimensionnelle
-  - Fully Connected : classification finale
-- **Architectures populaires** :
-  - ResNet : connexions résiduelles
-  - VGG : blocs convolutifs profonds
-  - Inception : convolutions parallèles
-- **Techniques avancées** :
-  - Transfer Learning
-  - Data Augmentation
-  - Feature Visualization
-
-### 3.3 RNN et LSTM
-- **Structure LSTM** :
-  - Forget gate
-  - Input gate
-  - Output gate
-  - Cell state
-- **Variantes** :
-  - GRU : version simplifiée
-  - Bidirectional : contexte passé et futur
-  - Attention mechanism
-- **Applications spécifiques** :
-  - Seq2Seq pour traduction
-  - Encoder-Decoder
-  - Time series forecasting
-
-## **4. Métriques d'Évaluation Détaillées**
-
-### 4.1 Classification
-
-#### Exemple Concret : Évaluation d'un Modèle de Diagnostic Médical
+#### Exemple : Segmentation Client
 ```python
-import pandas as pd
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc
+from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-# Données exemple (vrais diagnostics vs prédictions)
-y_true = [1, 0, 1, 1, 0, 0, 1, 0, 1, 1]  # 1: Malade, 0: Sain
-y_pred = [1, 0, 0, 1, 0, 1, 1, 0, 1, 1]
-y_proba = [0.8, 0.2, 0.6, 0.9, 0.3, 0.7, 0.8, 0.2, 0.9, 0.8]
+# Données clients
+data = {
+    'depense_moyenne': [100, 800, 200, 1200, 150, 900],
+    'frequence_achat': [2, 12, 3, 15, 2, 10]
+}
+df = pd.DataFrame(data)
 
-# 1. Matrice de Confusion
+# Clustering
+kmeans = KMeans(n_clusters=3, random_state=42)
+df['cluster'] = kmeans.fit_predict(df)
+
+# Visualisation
+plt.figure(figsize=(8, 6))
+scatter = plt.scatter(df['depense_moyenne'], 
+                     df['frequence_achat'],
+                     c=df['cluster'], 
+                     cmap='viridis')
+plt.xlabel('Dépense Moyenne')
+plt.ylabel('Fréquence d\'Achat')
+plt.title('Segments Clients')
+plt.colorbar(scatter, label='Cluster')
+
+# Analyse des centres
+centres = pd.DataFrame(
+    kmeans.cluster_centers_,
+    columns=['depense_moyenne', 'frequence_achat']
+)
+print("\nCentres des clusters :")
+print(centres)
+```
+
+:bulb: <span class='intuition'>**Intuition :** Imaginez que vous devez regrouper des billes de différentes couleurs en tas, sans connaître les couleurs à l'avance.</span>
+
+#### Algorithme
+1. Initialisation aléatoire des centres
+2. Attribution des points au centre le plus proche
+3. Mise à jour des centres
+4. Répétition jusqu'à convergence
+
+#### Critères de Choix de K
+- Méthode du coude
+- Silhouette score
+- Gap statistic
+
+### PCA (Analyse en Composantes Principales)
+
+*Technique de réduction de dimensionnalité préservant la variance maximale.*
+
+#### Exemple : Réduction de Dimensionnalité d'Images
+```python
+from sklearn.decomposition import PCA
+import numpy as np
+
+# Création de données image simulées (28x28 pixels)
+n_samples = 100
+n_features = 28 * 28
+X = np.random.rand(n_samples, n_features)
+
+# Application PCA
+pca = PCA(n_components=0.95)  # Garde 95% de la variance
+X_reduit = pca.fit_transform(X)
+
+# Analyse de la réduction
+n_composantes = X_reduit.shape[1]
+variance_ratio = pca.explained_variance_ratio_
+
+print(f"Dimensions originales : {X.shape}")
+print(f"Dimensions après PCA : {X_reduit.shape}")
+print(f"Variance expliquée cumulée : {sum(variance_ratio):.2%}")
+
+# Visualisation variance expliquée
+plt.figure(figsize=(8, 4))
+plt.plot(np.cumsum(variance_ratio))
+plt.xlabel('Nombre de Composantes')
+plt.ylabel('Variance Expliquée Cumulée')
+plt.title('Scree Plot')
+plt.grid(True)
+```
+
+:bulb: <span class='intuition'>**Intuition :** C'est comme prendre une photo d'un objet 3D selon l'angle qui montre le plus de détails possibles.</span>
+
+#### Étapes
+1. Centrage des données
+2. Calcul de la matrice de covariance
+3. Décomposition en valeurs propres
+4. Projection sur les composantes principales
+
+## **3. Métriques d'Évaluation**
+
+### Classification
+
+#### Exemple : Évaluation d'un Modèle de Diagnostic
+```python
+from sklearn.metrics import confusion_matrix, classification_report
+
+# Résultats du modèle
+y_true = [1, 0, 1, 1, 0, 0, 1]  # 1: Malade, 0: Sain
+y_pred = [1, 0, 0, 1, 0, 1, 1]
+
+# Matrice de confusion
 cm = confusion_matrix(y_true, y_pred)
-plt.figure(figsize=(8, 6))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
-            xticklabels=['Sain', 'Malade'],
-            yticklabels=['Sain', 'Malade'])
-plt.title('Matrice de Confusion')
-plt.ylabel('Réel')
-plt.xlabel('Prédit')
+print("Matrice de confusion :")
+print(cm)
 
-# 2. Métriques détaillées
-rapport = classification_report(y_true, y_pred)
-print("\nRapport de Classification :")
-print(rapport)
+# Métriques détaillées
+print("\nRapport de classification :")
+print(classification_report(y_true, y_pred))
 
-# 3. Courbe ROC
-fpr, tpr, thresholds = roc_curve(y_true, y_proba)
-roc_auc = auc(fpr, tpr)
-
-plt.figure(figsize=(8, 6))
-plt.plot(fpr, tpr, color='darkorange', lw=2, 
-         label=f'ROC curve (AUC = {roc_auc:.2f})')
-plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel('Taux de Faux Positifs')
-plt.ylabel('Taux de Vrais Positifs')
-plt.title('Courbe ROC')
-plt.legend(loc="lower right")
-
-# 4. Calculs détaillés
+# Calculs manuels
 TP = cm[1,1]  # Vrais Positifs
 TN = cm[0,0]  # Vrais Négatifs
 FP = cm[0,1]  # Faux Positifs
@@ -360,170 +286,72 @@ FN = cm[1,0]  # Faux Négatifs
 precision = TP / (TP + FP)
 recall = TP / (TP + FN)
 f1 = 2 * (precision * recall) / (precision + recall)
-accuracy = (TP + TN) / (TP + TN + FP + FN)
 
-print("\nMétriques détaillées :")
-print(f"Précision : {precision:.3f}")
-print(f"Recall : {recall:.3f}")
-print(f"F1-Score : {f1:.3f}")
-print(f"Accuracy : {accuracy:.3f}")
-
-# 5. Implications métier
-cout_fp = 100  # Coût d'un faux positif (traitement inutile)
-cout_fn = 500  # Coût d'un faux négatif (maladie non détectée)
-cout_total = FP * cout_fp + FN * cout_fn
-
-print(f"\nCoût total des erreurs : {cout_total}€")
+print(f"\nPrécision : {precision:.2f}")
+print(f"Recall : {recall:.2f}")
+print(f"F1-Score : {f1:.2f}")
 ```
+- **Accuracy** : Proportion de prédictions correctes
+- **Précision** : $$\frac{TP}{TP+FP}$$
+- **Recall** : $$\frac{TP}{TP+FN}$$
+- **F1-Score** : $$2 \times \frac{Précision \times Recall}{Précision + Recall}$$
 
-#### Interprétation des Résultats :
-1. **Matrice de Confusion** :
-   - Diagonale principale (TP, TN) : bonnes prédictions
-   - Hors diagonale (FP, FN) : erreurs
+### Régression
 
-2. **Implications Pratiques** :
-   - Précision élevée → Peu de faux positifs → Économie de traitements inutiles
-   - Recall élevé → Peu de faux négatifs → Peu de malades non détectés
-   - AUC-ROC proche de 1 → Bon pouvoir discriminant
-
-3. **Choix du Seuil** :
-   - Augmenter le seuil → Plus restrictif → Moins de faux positifs mais plus de faux négatifs
-   - Diminuer le seuil → Plus permissif → Plus de détection mais plus de fausses alertes
-- **Matrice de confusion** :
-  ```
-  |        | Pred + | Pred - |
-  |--------|---------|---------|
-  | True + |   TP    |   FN    |
-  | True - |   FP    |   TN    |
-  ```
-- **Métriques dérivées** :
-  - Précision = TP/(TP+FP)
-  - Recall = TP/(TP+FN)
-  - F1 = 2*(Précision*Recall)/(Précision+Recall)
-  - ROC-AUC : aire sous la courbe ROC
-
-### 4.2 Régression
-
-#### Exemple Concret : Évaluation d'un Modèle de Prévision des Ventes
+#### Exemple : Évaluation d'un Modèle de Prévision
 ```python
+from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
-import pandas as pd
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-import matplotlib.pyplot as plt
 
-# Données exemple (ventes réelles vs prédites)
-ventes_reelles = [100, 150, 120, 180, 200, 160, 130, 210, 190, 140]
-ventes_predites = [110, 155, 115, 170, 190, 165, 140, 200, 180, 150]
+# Données
+y_true = [10, 15, 12, 18, 20, 16, 13, 21]
+y_pred = [11, 15.5, 11.5, 17, 19, 16.5, 14, 20]
 
-# 1. Calcul des métriques
-mse = mean_squared_error(ventes_reelles, ventes_predites)
+# Calcul des métriques
+mse = mean_squared_error(y_true, y_pred)
 rmse = np.sqrt(mse)
-mae = mean_absolute_error(ventes_reelles, ventes_predites)
-r2 = r2_score(ventes_reelles, ventes_predites)
+r2 = r2_score(y_true, y_pred)
 
-# 2. Visualisation des prédictions
-plt.figure(figsize=(10, 6))
-plt.scatter(ventes_reelles, ventes_predites, color='blue', alpha=0.5)
-plt.plot([min(ventes_reelles), max(ventes_reelles)], 
-         [min(ventes_reelles), max(ventes_reelles)], 
-         'r--', lw=2)
-plt.xlabel('Ventes Réelles')
-plt.ylabel('Ventes Prédites')
-plt.title('Prédictions vs Réalité')
-
-# 3. Analyse des résidus
-residus = np.array(ventes_reelles) - np.array(ventes_predites)
-plt.figure(figsize=(10, 6))
-plt.scatter(ventes_predites, residus, color='green', alpha=0.5)
-plt.axhline(y=0, color='r', linestyle='--')
-plt.xlabel('Ventes Prédites')
-plt.ylabel('Résidus')
-plt.title('Analyse des Résidus')
-
-# 4. Affichage des métriques
-print("\nMétriques de performance :")
 print(f"MSE : {mse:.2f}")
 print(f"RMSE : {rmse:.2f}")
-print(f"MAE : {mae:.2f}")
-print(f"R² : {r2:.3f}")
+print(f"R² : {r2:.2f}")
 
-# 5. Analyse des erreurs relatives
-erreurs_relatives = np.abs(residus / np.array(ventes_reelles)) * 100
-print(f"\nErreur relative moyenne : {np.mean(erreurs_relatives):.1f}%")
-print(f"Erreur relative médiane : {np.median(erreurs_relatives):.1f}%")
-print(f"Erreur relative max : {np.max(erreurs_relatives):.1f}%")
+# Analyse des résidus
+residus = np.array(y_true) - np.array(y_pred)
+print(f"\nRésidus moyens : {np.mean(residus):.2f}")
+print(f"Écart-type résidus : {np.std(residus):.2f}")
 
-# 6. Implications business
-seuil_alerte = 20  # Pourcentage d'erreur acceptable
-erreurs_importantes = erreurs_relatives > seuil_alerte
-print(f"\nNombre de prédictions avec erreur > {seuil_alerte}% : "
-      f"{sum(erreurs_importantes)}")
+# Visualisation
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+plt.scatter(y_true, y_pred)
+plt.plot([min(y_true), max(y_true)], 
+         [min(y_true), max(y_true)], 'r--')
+plt.xlabel('Valeurs Réelles')
+plt.ylabel('Prédictions')
 
-# 7. Distribution des erreurs
-plt.figure(figsize=(10, 6))
-plt.hist(erreurs_relatives, bins=20, color='purple', alpha=0.6)
-plt.axvline(np.mean(erreurs_relatives), color='r', linestyle='--',
-            label=f'Moyenne ({np.mean(erreurs_relatives):.1f}%)')
-plt.xlabel('Erreur Relative (%)')
+plt.subplot(1, 2, 2)
+plt.hist(residus, bins=10)
+plt.xlabel('Résidus')
 plt.ylabel('Fréquence')
-plt.title('Distribution des Erreurs Relatives')
-plt.legend()
+plt.title('Distribution des Résidus')
 ```
 
-#### Interprétation des Résultats :
+- **MSE** : $\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$
+- **RMSE** : $$\sqrt{MSE}$$
+- **MAE** : $$\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$$
+- **R²** : $$1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$$
 
-1. **RMSE vs MAE** :
-   - RMSE > MAE → Présence d'erreurs importantes
-   - RMSE ≈ MAE → Erreurs uniformes
+## **4. Bonnes Pratiques**
 
-2. **R² et Business** :
-   - R² = 0.95 → 95% de la variance expliquée
-   - Utile pour la confiance dans les prédictions
+### Préparation des Données
+1. Nettoyage des valeurs manquantes
+2. Normalisation/Standardisation
+3. Encodage des variables catégorielles
+4. Train/Test/Validation split
 
-3. **Analyse des Résidus** :
-   - Pattern visible → Biais systématique
-   - Distribution aléatoire → Bon modèle
-
-4. **Impact Business** :
-   - Coût des sous-estimations (rupture de stock)
-   - Coût des surestimations (surstock)
-   - Ajustement des seuils d'alerte
-- **Formules détaillées** :
-  - MSE = $$\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$$
-  - RMSE = $$\sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}$$
-  - MAE = $$\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$$
-  - R² = $$1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$$
-
-
-## **5. Outils et Frameworks**
-
-### 5.1 Scikit-learn
-- **Avantages** :
-  - API cohérente
-  - Documentation excellente
-  - Intégration facile
-- **Modules principaux** :
-  - preprocessing
-  - model_selection
-  - metrics
-  - pipeline
-
-### 5.2 TensorFlow/Keras
-- **Architecture** :
-  - Graphe de calcul
-  - Eager execution
-  - Distribution possible
-- **Fonctionnalités** :
-  - Custom training loops
-  - TF.data pour les pipelines
-  - TensorBoard pour visualisation
-
-### 5.3 PyTorch
-- **Caractéristiques** :
-  - Dynamic computational graphs
-  - Pythonic
-  - Debugging facile
-- **Écosystème** :
-  - torchvision
-  - torchaudio
-  - torchtext
+### Optimisation
+- Grid search
+- Random search
+- Validation croisée
+- Early stopping
