@@ -64,7 +64,7 @@ sidebar:
 - Spécificité (Specificity) : Rappel pour les classes négatives.
   - $ Spécificité = \frac{TN}{Observations Négatives} = \frac{TN}{TN+FP}$
 
-- **Log-Loss** : Mesure la performance lorsque le modèle produit une probabilité \hat{y_{ic}} que l’observation n appartienne à la classe c.
+- **Log-Loss** : Mesure la performance lorsque le modèle produit une probabilité $\hat{y_{ic}}$ que l’observation n appartienne à la classe c.
 
   - Aussi appelée perte **d’entropie croisée** ou **perte logistique**.
 
@@ -90,7 +90,7 @@ sidebar:
 
 - **Kappa de Cohen** : Amélioration de votre classificateur comparée à la simple supposition de la classe la plus probable.
 
-  - \kappa = \frac{exactitude - \%{ClasseMax}}{1 - \%{ClasseMax}}
+  - $\kappa = \frac{exactitude - \%{ClasseMax}}{1 - \%{ClasseMax}}$
 
   - Souvent utilisée pour calculer la fiabilité inter-évaluateurs (ex : 2 humains) : $\kappa = \frac{p_o- p_e}{1 - p_e}$ où  $p_o$  est l’accord observé et  $p_e$  est l’accord attendu par hasard.
 
