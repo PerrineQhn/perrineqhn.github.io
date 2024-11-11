@@ -2,7 +2,7 @@
 title: 'Algorithmes Standards en Machine Learning'
 date: 2024-11-11
 permalink: /machine-learning-glossary/concepts/ml_algorithms/
-toc: false
+toc: true
 excerpt: "Concepts en apprentissage automatique : algorithmes standards de machine learning."
 header: 
   teaser: "blog/glossary/glossary.png"
