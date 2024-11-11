@@ -339,7 +339,7 @@ plt.title('Distribution des Résidus')
 
 - **MSE** : $\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$
 - **RMSE** : $$\sqrt{MSE}$$
-- **MAE** : $$\frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$$
+- **MAE** : $$\frac{1}{n}\sum_{i=1}^{n}\|y_i - \hat{y}_i\|$$
 - **R²** : $$1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$$
 
 ## **4. Bonnes Pratiques**
