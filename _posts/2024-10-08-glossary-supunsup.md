@@ -1,6 +1,6 @@
 ---
 title: 'Supervisé vs non supervisé'
-date: 2014-10-08
+date: 2024-10-08
 #modified: 
 permalink: /machine-learning-glossary/concepts/supunsup
 toc: false
@@ -12,7 +12,7 @@ tags:
   - Glossary
 author_profile: false
 redirect_from: 
-  - /posts/2014/10/glossary-supunsup
+  - /posts/2024/10/glossary-supunsup
 sidebar:
   title: "Glossaire ML"
   nav: sidebar-glossary

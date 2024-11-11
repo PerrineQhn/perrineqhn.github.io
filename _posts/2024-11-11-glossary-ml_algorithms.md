@@ -1,8 +1,8 @@
 ---
 title: 'Algorithmes et Métriques Standards d'Apprentissage Automatique'
-date: 2024-10-08
+date: 2024-11-11
 #modified: 
-permalink: /machine-learning-glossary/concepts/ml-algorithms
+permalink: /machine-learning-glossary/concepts/ml_algorithms
 toc: false
 excerpt: "Concepts en apprentissage automatique : algorithmes et métriques standards."
 header: 
@@ -12,11 +12,10 @@ tags:
   - Glossary
 author_profile: false
 redirect_from: 
-  - /posts/2024/11/glossary-ml-algorithms
+  - /posts/2024/11/glossary-ml_algorithms
 sidebar:
   title: "Glossaire ML"
   nav: sidebar-glossary
-
 ---
 {% include base_path %}
 
