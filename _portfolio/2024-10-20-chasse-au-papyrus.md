@@ -58,9 +58,9 @@ Ce projet avait pour objectif d’automatiser la collecte et l’analyse de donn
 
 <!-- > **[Télécharger le rapport final](#)** - Accédez au rapport complet avec des analyses approfondies.
 >
-> **[Accéder à l’application Streamlit](#)** - Application en ligne pour interagir avec les données et explorer les analyses de corpus en temps réel.
+> **[Accéder à l’application Streamlit](#)** - Application en ligne pour interagir avec les données et explorer les analyses de corpus en temps réel.-->
 >
-> **[Lien vers le code GitHub](#)** - Code source de l’application et des scripts de collecte et d’analyse. -->
+> **[Lien vers le code GitHub](https://github.com/PerrineQhn/Chasse-au-Papyrus)** - Code source de l’application et des scripts de collecte et d’analyse. 
 
 ---
 
