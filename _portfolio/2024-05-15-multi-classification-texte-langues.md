@@ -63,11 +63,11 @@ Ce projet visait à classifier automatiquement des textes multilingues en foncti
    - Corrélations entre la longueur des textes et la diversité lexicale, permettant d’identifier la richesse linguistique de chaque langue dans le corpus.
 - **Exemples de Prédictions et Matrice de Confusion :** Résultats des prédictions du modèle et des erreurs fréquentes visualisées dans une matrice de confusion, montrant les langues parfois confondues et les possibilités d'amélioration.
 
-<!-- > **[Télécharger le rapport final](#)** - Rapport détaillant le processus, les résultats et les interprétations des données analysées.
+> **[Télécharger le rapport final](https://github.com/PerrineQhn/OutilsTraitementCorpus/blob/main/README.md)** - Rapport détaillant le processus, les résultats et les interprétations des données analysées.
 >
-> **[Voir les visualisations](#)** - Accédez aux graphiques de la loi de Zipf, de la diversité lexicale et des performances de classification.
+<!-- > **[Voir les visualisations](#)** - Accédez aux graphiques de la loi de Zipf, de la diversité lexicale et des performances de classification. -->
 >
-> **[Lien vers le code GitHub](#)** - Code source pour reproduire l’extraction, le prétraitement et la classification des données multilingues. -->
+> **[Lien vers le dépôt GitHub](https://github.com/PerrineQhn/OutilsTraitementCorpus)** - Dépôt GitHub pour reproduire l’extraction, le prétraitement et la classification des données multilingues.
 
 ---
 

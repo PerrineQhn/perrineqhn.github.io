@@ -73,9 +73,9 @@ Ce projet étudiant visait à développer un OCR (reconnaissance optique de cara
 
 > **[Télécharger le rapport final](#)** - Rapport complet détaillant la méthodologie, les résultats et les recommandations.
 >
-> **[Voir la démonstration](#)** - Accédez à la démonstration de l'OCR en ligne pour tester les capacités de reconnaissance en direct.
+> **[Voir la démonstration](#)** - Accédez à la démonstration de l'OCR en ligne pour tester les capacités de reconnaissance en direct.-->
 >
-> **[Lien vers le code GitHub](#)** - Code source et instructions pour reproduire les résultats. -->
+> **[Lien vers le code GitHub](https://github.com/PerrineQhn/Chinese_OCR)** - Code source et instructions pour reproduire les résultats. 
 
 ---
 

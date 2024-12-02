@@ -56,11 +56,11 @@ Ce projet avait pour objectif d’automatiser la collecte et l’analyse de donn
 - **Visualisations des Changements de Sons et Caractères :** Graphiques illustrant les transformations linguistiques les plus fréquentes, comme les changements de caractères, pour identifier les tendances d'évolution dans les papyri.
 - **Rapport d'Analyse :** Un document détaillant les résultats de l’analyse, y compris des graphiques illustrant la fréquence des mots, la distribution des genres et des provenances.
 
-> **[Télécharger le rapport final](#)** - Accédez au rapport complet avec des analyses approfondies.
+<!-- > **[Télécharger le rapport final](#)** - Accédez au rapport complet avec des analyses approfondies.
 >
 > **[Accéder à l’application Streamlit](#)** - Application en ligne pour interagir avec les données et explorer les analyses de corpus en temps réel.
 >
-> **[Lien vers le code GitHub](#)** - Code source de l’application et des scripts de collecte et d’analyse.
+> **[Lien vers le code GitHub](#)** - Code source de l’application et des scripts de collecte et d’analyse. -->
 
 ---
 

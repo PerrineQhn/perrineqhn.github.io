@@ -66,11 +66,11 @@ Ce projet avait pour objectif d'explorer et de comparer des méthodes de recherc
    - StackOverflow : LDA 14.64% vs TF-IDF 19.76%
    - Wikipedia : LDA 13.65% vs TF-IDF 11.48%
 
-> **[Télécharger le rapport final](#)** - Rapport détaillé documentant la méthodologie, les résultats et les interprétations.
+> **[Télécharger le rapport final](https://github.com/PerrineQhn/Keywords_Extraction_TFIDF_vs_LDA/blob/main/rapport/Rapport.pdf)** - Rapport détaillé documentant la méthodologie, les résultats et les interprétations.
 >
 <!-- > **[Accéder aux notebooks](#)** - Visualisez les notebooks pour l'implémentation de LDA et TF-IDF, ainsi que les résultats de chaque méthode. -->
 >
-> **[Lien vers le dépôt GitHub](#)** - Code source pour reproduire l’extraction et l’évaluation des mots-clés.
+> **[Lien vers le dépôt GitHub](https://github.com/PerrineQhn/Keywords_Extraction_TFIDF_vs_LDA)** - Code source pour reproduire l’extraction et l’évaluation des mots-clés.
 
 ---
 

@@ -55,11 +55,9 @@ Ce projet étudiant avait pour objectif de créer un synthétiseur vocal en util
 - **Synthèse Vocale Fonctionnelle :** Le script Python produit une voix synthétique cohérente avec les diphones enregistrés, démontrant une capacité à lire des phrases en respectant les règles de prosodie.
 - **Exemples Audio :** Des fichiers audio générés illustrent la précision de la synthèse pour plusieurs phrases testées.
 
-> **[Télécharger le script Python](#)** - Accédez au code source utilisé pour la synthèse vocale.
+> **[Télécharger le notebook](https://github.com/PerrineQhn/voice_synthesizer/blob/main/sentences_synthetizer.ipynb)** - Accédez au notebook utilisé pour la synthèse vocale.
 >
-> **[Écouter un exemple audio](#)** - Écoutez un extrait de la voix synthétique générée par le projet.
->
-> **[Lien vers le dépôt GitHub](#)** - Code complet et instructions pour reproduire le projet.
+> **[Lien vers le dépôt GitHub](https://github.com/PerrineQhn/voice_synthesizer)** - Code complet et instructions pour reproduire le projet.
 
 ---
 
